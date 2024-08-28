@@ -6,8 +6,7 @@ generateContacts(5);
 
 const fs = require('fs');
 const { createFakeContact } = require('../utils/createFakeContact');
-const { PATH_DB } = require('../constants/contacts');
-
+const { PATH_DB } = require('../constants/contacts.js');
 const NUM_CONTACTS = 10; // Кількість контактів для генерації
 
 const contacts = Array.from({ length: NUM_CONTACTS }, createFakeContact);
