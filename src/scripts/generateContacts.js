@@ -1,5 +1,5 @@
 
-import {createFakeContact} from '../utils/createFakeContact'; // Припускаємо, що createFakeContact знаходиться в тому ж директорії
+import {createFakeContact} from '../utils/createFakeContact.js'; // Припускаємо, що createFakeContact знаходиться в тому ж директорії
 
 async function generateContacts(numContacts) {
     try {
@@ -24,4 +24,4 @@ async function generateContacts(numContacts) {
     }
 }
 
-export default generateContacts;
+export default generateContacts; 
