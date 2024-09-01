@@ -1,27 +1,19 @@
-
-import {createFakeContact} from '../utils/createFakeContact.js'; // Припускаємо, що createFakeContact знаходиться в тому ж директорії
-
-async function generateContacts(numContacts) {
+export async function generateContacts(numContacts, filePath = 'src/db/db.json') {
     try {
-        // Читаємо існуючі дані з файлу
-        const data = await fs.readFile('src/db/db.json', 'utf8');
-        const existingContacts = JSON.parse(data);
-
-        // Створюємо нові контакти
-        const newContacts = [];
-        for (let i = 0; i < numContacts; i++) {
-            newContacts.push(createFakeContact());
-        }
-
-        // Об'єднуємо існуючі та нові контакти
-        const allContacts = [...existingContacts, ...newContacts];
-
-        // Записуємо оновлені дані у файл
-        await fs.writeFile('src/db/db.json', JSON.stringify(allContacts, null, 2));
-        console.log(`Додано ${numContacts} нових контактів`);
+      // Считываем существующие контакты
+      const existingContacts = await readContacts(filePath);
+  
+      // Генерируем новые контакты
+      const newContacts = Array.from({ length: numContacts }, () => createFakeContact());
+  
+      // Добавляем новые контакты к существующим
+      const updatedContacts = [...existingContacts, ...newContacts];
+  
+      // Записываем обновленные контакты в файл
+      await writeContacts(updatedContacts, filePath);
+  
+      console.log(`Добавлено ${numContacts} новых контактов в файл ${filePath}`);
     } catch (error) {
-        console.error('Помилка при генерації та збереженні контактів:', error);
+      console.error('Ошибка при добавлении новых контактов:', error);
     }
-}
-
-export default generateContacts; 
+  }
