@@ -1,1 +1,37 @@
-[]  
+[
+  {
+    "id": "cdf7512f-e88d-46e1-b1c6-6060d9c04826",
+    "name": "Calvin Muller",
+    "phone": "930.847.6305 x48121",
+    "email": "Shany_Gerlach89@gmail.com",
+    "job": "Principal Marketing Director"
+  },
+  {
+    "id": "63d591ee-7c1f-4e89-8586-cae4f34ff960",
+    "name": "Doreen Kerluke-Satterfield",
+    "phone": "1-946-253-3060 x481",
+    "email": "Nicole.Terry@gmail.com",
+    "job": "Central Identity Planner"
+  },
+  {
+    "id": "d34b0ebe-8dc3-405c-9b68-184c1a587353",
+    "name": "Jennie Spinka",
+    "phone": "972-547-5232 x1646",
+    "email": "Jaren_Kiehn@hotmail.com",
+    "job": "International Accountability Executive"
+  },
+  {
+    "id": "252bacd7-9509-4723-8e6c-4acf8c0b015d",
+    "name": "Jeanette Satterfield",
+    "phone": "(757) 834-6977 x4512",
+    "email": "Stanton_Nicolas@yahoo.com",
+    "job": "Forward Intranet Technician"
+  },
+  {
+    "id": "ff5a5e4e-1af0-4317-bad7-066fb49676dd",
+    "name": "Willis Gislason",
+    "phone": "(656) 742-5822",
+    "email": "Winfield_Davis@yahoo.com",
+    "job": "Corporate Factors Planner"
+  }
+]

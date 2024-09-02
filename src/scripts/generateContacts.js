@@ -1,19 +1,17 @@
-export async function generateContacts(numContacts, filePath = 'src/db/db.json') {
-    try {
-      // Считываем существующие контакты
-      const existingContacts = await readContacts(filePath);
-  
-      // Генерируем новые контакты
-      const newContacts = Array.from({ length: numContacts }, () => createFakeContact());
-  
-      // Добавляем новые контакты к существующим
-      const updatedContacts = [...existingContacts, ...newContacts];
-  
-      // Записываем обновленные контакты в файл
-      await writeContacts(updatedContacts, filePath);
-  
-      console.log(`Добавлено ${numContacts} новых контактов в файл ${filePath}`);
-    } catch (error) {
-      console.error('Ошибка при добавлении новых контактов:', error);
-    }
+import { createFakeContact } from '../utils/createFakeContact.js';
+import {readContactsFromFile} from '../utils/fileOperations.js'
+import{writeContactsToFile} from '../utils/fileOperations.js'
+
+
+const generateContacts = async (number) => {
+  const existingContacts = await readContactsFromFile();
+  for (let i = 0; i < number; i++) {
+    const newContact = createFakeContact();
+    existingContacts.push(newContact);
   }
+  await writeContactsToFile(existingContacts);
+};
+
+generateContacts(5);
+
+
